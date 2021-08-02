@@ -86,10 +86,13 @@ header button{
     font-size: .9rem;
 }
 
+.meals-container{
+    padding: 1rem;
+}
+
 .meal{
-    margin: 1.5rem;
+    border-radius: 5px;
     box-shadow: 0 0 10px 2px rgb(131, 130, 130);
-    border-radius: 10px;
 }
 
 .meal-header{
@@ -108,6 +111,8 @@ header button{
     height: 250px;
     width: 100%;
     object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .meal-body{
@@ -126,6 +131,6 @@ header button{
     cursor: pointer;
 }
 
-.meal-body .fav-btn:active{
+.meal-body .fav-btn.active{
     color:#c31432 ;
 }
