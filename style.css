@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+img {
+    max-width: 100%;
+}
+
+.mobile-container{
+    width: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 2px rgb(131, 130, 130);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+header input{
+    padding: 0.5rem 3rem;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.13);
+    margin-right: 10px;
+    font-family: inherit;
+}
+
+header button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.3rem;
+}
+
+.fav-container{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.13);
+}
+
+.fav-container ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.fav-container li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 85px;
+    margin: 0 10px;
+}
+
+.fav-container li img{
+    width:70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px 2px rgb(131, 130, 130);
+    margin-bottom: 10px;
+}
+
+.fav-container li span{
+    font-size: .9rem;
+}
+
+.meal{
+    margin: 1.5rem;
+    box-shadow: 0 0 10px 2px rgb(131, 130, 130);
+    border-radius: 10px;
+}
+
+.meal-header{
+    position: relative;
+}
+.meal-header .random{
+    position: absolute;
+    top: 1rem;
+    background-color: rgba(255, 235, 205, 0.90);
+    padding: .5rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.meal-header img{
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.meal-body{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+}
+
+.meal-body .fav-btn{
+    font-size: 1.3rem;
+    border: none;
+    background-color: transparent;
+    color: rgba(128, 128, 128, 0.13);
+    cursor: pointer;
+}
+
+.meal-body .fav-btn:active{
+    color:#c31432 ;
+}
