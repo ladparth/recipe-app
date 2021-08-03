@@ -59,18 +59,17 @@ header button{
 
 .fav-container ul{
     display: flex;
+    grid-template-columns: 1fr;
     list-style-type: none;
-    justify-content: space-evenly;
     padding: 1rem;
+    overflow-x: scroll;
 }
 
 .fav-container li{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    display: inline-block;
     width: 85px;
     margin: 0 10px;
+    position: relative;
 }
 
 .fav-container li img{
@@ -90,6 +89,18 @@ header button{
     padding: 1rem;
 }
 
+button.clear{
+    border: none;
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: transparent;
+}
+
+button.clear:hover{
+    background-color: rgba(255, 0, 0, 0.384);
+}
+
 .meal{
     border-radius: 5px;
     box-shadow: 0 0 10px 2px rgb(131, 130, 130);
@@ -105,6 +116,7 @@ header button{
     padding: .5rem;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
+    cursor: pointer;
 }
 
 .meal-header img{
