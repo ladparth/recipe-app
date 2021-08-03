@@ -57,12 +57,17 @@ header button{
     background-color: rgba(128, 128, 128, 0.13);
 }
 
+.fav-container h3{
+    margin: .5rem 0;
+}
+
 .fav-container ul{
     display: flex;
     grid-template-columns: 1fr;
     list-style-type: none;
     padding: 1rem;
     overflow-x: scroll;
+    margin-top: 0;
 }
 
 .fav-container li{
@@ -73,7 +78,7 @@ header button{
 }
 
 .fav-container li img{
-    width:70px;
+    width: 70px;
     height: 70px;
     border-radius: 50%;
     object-fit: cover;
@@ -82,14 +87,24 @@ header button{
 }
 
 .fav-container li span{
-    font-size: .9rem;
+    display: inline-block;
+    width: 100%;
+    font-size: .7rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .meals-container{
     padding: 1rem;
 }
 
+.fav-container li:hover .clear{
+    opacity: 1;
+}
+
 button.clear{
+    opacity: 0;
     border: none;
     position: absolute;
     top: -10px;
@@ -101,9 +116,10 @@ button.clear:hover{
     background-color: rgba(255, 0, 0, 0.384);
 }
 
-.meal{
-    border-radius: 5px;
+.meal-items{
     box-shadow: 0 0 10px 2px rgb(131, 130, 130);
+    border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
 .meal-header{

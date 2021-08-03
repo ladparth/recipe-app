@@ -1,5 +1,7 @@
-const meals = document.getElementById('meals');
-let favRecipe = [];
+const mealsEle = document.getElementById('meals');
+
+const searchTerm =document.getElementById('search-term');
+const searchBtn =document.getElementById('search');
 
 async function getRandomMeal(){
     const resp = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
@@ -28,7 +30,11 @@ async function getMealById(id){
 //getMealById(52922);
 
 async function getMealsBySearch(term){
-    const meals = await fetch('http://www.themealdb.com/api/json/v1/1/search.php?s='+term);
+    const resp = await fetch('http://www.themealdb.com/api/json/v1/1/search.php?s='+term);
+    const respData = await resp.json();
+    const meal = respData.meals;
+
+    return meal;
 
 }
 
@@ -38,16 +44,18 @@ function addMeal(mealData, random = false){
     meal.classList.add('meal');
     
     meal.innerHTML = `
-        <div class="meal-header">
-            ${random ? `
-            <span class="random" onclick =location.reload();>
-            Random Recipe
-            </span>` : ''}
-            <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
-        </div>
-        <div class="meal-body">
-            <h4>${mealData.strMeal}</h4>
-            <button class="fav-btn"><i class="fas fa-heart"></i></button>
+        <div class = "meal-items">
+            <div class="meal-header">
+                ${random ? `
+                <span class="random" onclick =location.reload();>
+                Random Recipe
+                </span>` : ''}
+                <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+            </div>
+            <div class="meal-body">
+                <h4>${mealData.strMeal}</h4>
+                <button class="fav-btn"><i class="fas fa-heart"></i></button>
+            </div>
         </div>
     `
 
@@ -70,7 +78,7 @@ function addMeal(mealData, random = false){
     });
 
 
-    meals.appendChild(meal);
+    mealsEle.appendChild(meal);
 }
 
 function addToFavLS(mealId){
@@ -125,3 +133,14 @@ function removeMealFromFavDOM(mealData){
     const fav = document.getElementById(`${mealData.idMeal}`);
     favs.removeChild(fav);
 }
+
+searchBtn.addEventListener('click',async ()=>{
+    mealsEle.innerHTML = '';
+    const search = searchTerm.value;
+    const meals = await getMealsBySearch(search);
+   if(meals){
+       meals.forEach((meal)=>{
+           addMeal(meal);
+       });
+   }
+});
