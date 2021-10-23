@@ -4,7 +4,7 @@ const searchTerm =document.getElementById('search-term');
 const searchBtn =document.getElementById('search');
 
 async function getRandomMeal(){
-    const resp = await fetch('http://www.themealdb.com/api/json/v1/1/random.php');
+    const resp = await fetch('//www.themealdb.com/api/json/v1/1/random.php');
 
     const respData = await resp.json();
     const randomMeal = respData.meals[0];
