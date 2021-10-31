@@ -18,7 +18,7 @@ getRandomMeal();
 addMealToFav();
 
 async function getMealById(id){
-    const resp = await fetch('http://www.themealdb.com/api/json/v1/1/lookup.php?i='+id);
+    const resp = await fetch('//www.themealdb.com/api/json/v1/1/lookup.php?i='+id);
 
     const respData = await resp.json();
     const meal = respData.meals[0];
@@ -30,7 +30,7 @@ async function getMealById(id){
 //getMealById(52922);
 
 async function getMealsBySearch(term){
-    const resp = await fetch('http://www.themealdb.com/api/json/v1/1/search.php?s='+term);
+    const resp = await fetch('//www.themealdb.com/api/json/v1/1/search.php?s='+term);
     const respData = await resp.json();
     const meal = respData.meals;
 
